@@ -1,26 +1,30 @@
 import { DataService } from "@/api/DataService";
-import { Repositories } from "@/models/Repositories";
+import Education from "@/components/Education";
+import Head from "@/components/Head";
+import Hero from "@/components/Hero";
+import Languages from "@/components/Languages";
+import Repositories from "@/components/Repositories";
+import Summary from "@/components/Summary";
+import { Repositories as ModelRepositories } from "@/models/Repositories";
 import { User } from "@/models/User";
 import { GetServerSideProps } from "next";
 
 interface HomeParams {
-  repositories: Repositories[]
+  repositories: ModelRepositories[]
   user: User
 }
 
 const Home: React.FC<HomeParams> = ({ repositories, user }) => {
   return (
-    <div className="container mx-auto">
-      <h1 className="text-5xl">Olá eu sou, {user?.name}</h1>
-      <h2 className="font-bold text-3xl">Meus repositórios no Github</h2>
-      <p className="">Github stats: {user.public_repos} / public_gists: {user.public_gists} / Followers: {user.followers} </p>
-      {repositories.map((repository: Repositories, index: number) => (
-        <div className="rounded bg-gray-200 mx-8 my-4 p-4 hover:shadow-md" key={index}>
-          <h3 className="font-bold">{repository?.full_name}</h3>
-          <p>Language: {repository.language} / Stars: {repository.stargazers_count}</p>
-        </div>
-      ))}
-    </div>
+    <div className="container mx-auto px-32 bg-network">
+      <Head />
+      <Hero />
+      <Summary />
+      <Education />
+      <Languages />
+      <Repositories repositories={repositories} user={user} />
+      <p className="text-center mb-4">© 2022-2023 V V P Tecnologia LTDA. Todos os direitos reservados.</p>
+    </div >
   )
 }
 
