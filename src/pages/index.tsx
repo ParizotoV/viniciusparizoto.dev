@@ -16,7 +16,7 @@ interface HomeParams {
 
 const Home: React.FC<HomeParams> = ({ repositories, user }) => {
   return (
-    <div className="container mx-auto px-32 bg-network">
+    <div className="container mx-auto md:px-32 bg-network">
       <Head />
       <Hero />
       <Summary />
