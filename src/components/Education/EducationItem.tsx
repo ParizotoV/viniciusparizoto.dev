@@ -1,4 +1,5 @@
-import { EducationParams } from "./Education.interface"
+import React from 'react';
+import { EducationParams } from './Education.interface';
 
 const EducationItem: React.FC<EducationParams> = ({ degree, institution, subject }) => {
   return (
@@ -7,7 +8,7 @@ const EducationItem: React.FC<EducationParams> = ({ degree, institution, subject
       <p className="text-2xl uppercase mb-1 leading-none">{subject}</p>
       <p className="font-bold normal-case text-lg leading-none">{institution}</p>
     </div>
-  )
-}
+  );
+};
 
-export default EducationItem
+export default EducationItem;

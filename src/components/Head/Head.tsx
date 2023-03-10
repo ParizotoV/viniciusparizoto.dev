@@ -1,11 +1,11 @@
-import Head from "next/head"
+import Head from 'next/head';
 
 const HeadPage = () => {
   return (
     <Head>
-      <title>Vinicius Parizoto - Fullstack Developer</title>
+      <title>Vinicius Parizoto - Front-end Developer</title>
     </Head>
-  )
-}
+  );
+};
 
-export default HeadPage
+export default HeadPage;
