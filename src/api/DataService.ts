@@ -1,18 +1,14 @@
-import { getAPIClient } from './axios'
-import axios, { AxiosError } from 'axios'
+import { getAPIClient } from './axios';
+import axios, { AxiosError } from 'axios';
 
 interface DataServiceParams {
-  method?: 'POST' | 'PATCH' | 'DELETE' | 'GET',
-  data?: any,
-  url: string,
+  method?: 'POST' | 'PATCH' | 'DELETE' | 'GET';
+  data?: any;
+  url: string;
 }
 
-export const DataService = async ({
-  url,
-  data,
-  method = "POST",
-}: DataServiceParams) => {
-  const client = getAPIClient()
+export const DataService = async ({ url, data, method = 'POST' }: DataServiceParams) => {
+  const client = getAPIClient();
 
   try {
     const response = await client({
@@ -33,4 +29,4 @@ export const DataService = async ({
       };
     }
   }
-}
+};
